@@ -1,8 +1,8 @@
 {
-  "name": "Script Startup",
-  "version": "1.14",
-  "slug": "script_startup",
-  "description": "Scripts de Inicialização Home Assistant",
+  "name": "Airplay HA",
+  "version": "1.0",
+  "slug": "Airplay HA",
+  "description": "Música via Airplay Apply&Solve",
   "startup": "application",
   "boot": "auto",
   "homeassistant": "2023.0.0",
