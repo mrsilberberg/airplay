@@ -1,15 +1,28 @@
 {
-  "name": "Shairport Sync",
-  "version": "1.0",
-  "slug": "shairport_sync",
-  "description": "Servidor AirPlay que toca áudio na saída P2",
+  "name": "Script Startup",
+  "version": "1.14",
+  "slug": "script_startup",
+  "description": "Scripts de Inicialização Home Assistant",
   "startup": "application",
   "boot": "auto",
-  "host_network": true,
-  "audio": true,
-  "privileged": true,
-  "devices": ["/dev/snd"],
-  "arch": ["amd64", "aarch64", "armv7"],
+  "homeassistant": "2023.0.0",
+  "arch": ["amd64", "armv7", "aarch64"],
   "options": {},
-  "schema": {}
+  "schema": {},
+  "init": false,
+  "privileged": [
+    "SYS_ADMIN"
+  ],
+  "host_network": true,
+  "map": [
+    "config:rw",
+    "addons:rw",
+    "ssl:rw",
+    "backup:rw",
+    "share:rw",
+    "media:rw",
+    "data:rw"
+  ],
+  "full_access": true, 
+  "usb": true
 }
