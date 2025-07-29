@@ -1,0 +1,15 @@
+{
+  "name": "Shairport Sync",
+  "version": "1.0",
+  "slug": "shairport_sync",
+  "description": "Servidor AirPlay que toca áudio na saída P2",
+  "startup": "application",
+  "boot": "auto",
+  "host_network": true,
+  "audio": true,
+  "privileged": true,
+  "devices": ["/dev/snd"],
+  "arch": ["amd64", "aarch64", "armv7"],
+  "options": {},
+  "schema": {}
+}
