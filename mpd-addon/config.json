@@ -5,12 +5,24 @@
   "description": "MPD player que usa saída analógica local (hw:1,0) para integração com Music Assistant",
   "startup": "application",
   "boot": "auto",
+  "homeassistant": "2023.0.0",
   "audio": true,
   "host_network": true,
-  "privileged": true,
+  "privileged": [
+    "SYS_ADMIN"
+  ],
+  "host_network": true,
+  "map": [
+    "config:rw",
+    "addons:rw",
+    "ssl:rw",
+    "backup:rw",
+    "share:rw",
+    "media:rw",
+    "data:rw"
+  ],
   "devices": ["/dev/snd"],
   "arch": ["amd64", "armv7", "aarch64"],
-  "map": ["config:rw"],
   "options": {},
   "schema": {}
 }
