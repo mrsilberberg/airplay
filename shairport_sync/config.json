@@ -1,23 +1,19 @@
 {
-  "name": "Shairport Sync Audio",
-  "version": "1.0.1",
-  "slug": "shairport_sync_audio",
-  "description": "Shairport Sync como add-on com suporte a áudio no HAOS",
+  "name": "Shairport Classic",
+  "version": "1.0.0",
+  "slug": "shairport_classic",
+  "description": "AirPlay (Shairport Sync) audio receiver for Home Assistant OS",
+  "arch": ["amd64", "armv7", "aarch64"],
   "startup": "services",
   "boot": "auto",
-  "hassio_api": true,
+  "init": false,
+  "hassio_api": false,
   "hassio_role": "default",
-  "homeassistant": "2023.0.0",
-  "arch": ["amd64", "armv7", "aarch64"],
+  "homeassistant_api": false,
   "host_network": true,
-  "host_dbus": true,
-  "audio": true,
-  "privileged": ["SYS_ADMIN"],
-  "options": {
-    "output": "hw:1,0"
-  },
-  "schema": {
-    "output": "str"
-  }
+  "privileged": ["SYS_ADMIN", "DAC_READ_SEARCH"],
+  "map": ["config:rw", "media:rw"],
+  "devices": ["/dev/snd"],
+  "options": {},
+  "schema": {}
 }
-
