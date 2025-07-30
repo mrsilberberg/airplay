@@ -1,3 +1,0 @@
-#!/usr/bin/with-contenv bash
-echo "🟢 Starting Avahi..."
-exec avahi-daemon --no-chroot --debug
