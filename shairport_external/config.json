@@ -2,24 +2,36 @@
   "name": "Shairport External",
   "version": "1.0.0",
   "slug": "shairport_external",
-  "description": "AirPlay receiver using mikebrady/shairport-sync",
+  "description": "Add-on to run the shairport-sync external Docker image using host network and ALSA passthrough.",
   "startup": "services",
   "boot": "auto",
-  "image": "mikebrady/shairport-sync:latest",
-  "host_network": true,
-  "privileged": [
-    "SYS_ADMIN"
+  "homeassistant": "2023.0.0",
+  "arch": [
+    "amd64",
+    "armv7",
+    "aarch64"
   ],
-  "devices": [
-    "/dev/snd:/dev/snd:rwm"
-  ],
+  "options": {},
+  "schema": {},
+  "init": false,
   "hassio_api": false,
   "hassio_role": "default",
   "homeassistant_api": false,
-  "options": {},
-  "schema": {},
+  "privileged": [
+    "SYS_ADMIN",
+    "DAC_READ_SEARCH"
+  ],
+  "host_network": true,
+  "full_access": true,
+  "usb": true,
   "map": [
     "config:rw",
-    "share:rw"
-  ]
+    "addons:rw",
+    "ssl:rw",
+    "backup:rw",
+    "share:rw",
+    "media:rw",
+    "data:rw"
+  ],
+  "image": "mikebrady/shairport-sync"
 }
