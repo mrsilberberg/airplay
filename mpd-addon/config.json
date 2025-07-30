@@ -1,0 +1,16 @@
+{
+  "name": "MPD Audio Player",
+  "version": "1.0",
+  "slug": "mpd_audio_player",
+  "description": "MPD player que usa saída analógica local (hw:1,0) para integração com Music Assistant",
+  "startup": "application",
+  "boot": "auto",
+  "audio": true,
+  "host_network": true,
+  "privileged": true,
+  "devices": ["/dev/snd"],
+  "arch": ["amd64", "armv7", "aarch64"],
+  "map": ["config:rw"],
+  "options": {},
+  "schema": {}
+}
