@@ -1,13 +1,11 @@
-FROM alpine:3.18
+ARG BUILD_FROM
+FROM $BUILD_FROM
 
-SHELL ["/bin/ash", "-o", "pipefail", "-c"]
+ENV LANG C.UTF-8
 
-# Install dependencies
-RUN apk add --no-cache     alsa-utils     avahi     dbus     shairport-sync     bash     s6-overlay
+RUN apk add --no-cache shairport-sync alsa-utils dbus avahi
 
-# Copy run script and s6 service
 COPY run.sh /run.sh
-COPY user/ /etc/services.d/shairport/
-RUN chmod +x /run.sh /etc/services.d/shairport/run
+RUN chmod a+x /run.sh
 
-CMD ["/init"]
+CMD [ "/run.sh" ]
