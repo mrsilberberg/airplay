@@ -1,11 +1,12 @@
-#!/command/with-contenv bash
+#!/usr/bin/with-contenv bash
+echo "🔊 Starting Shairport Sync..."
 
-echo "🔊 Starting D-Bus & Avahi..."
+# Inicia Avahi e D-Bus
+dbus-daemon --system &
+avahi-daemon --no-drop-root &
 
-mkdir -p /run/dbus
-dbus-daemon --system --fork
+# Aguarda 1s para serviços iniciarem
+sleep 1
 
-avahi-daemon --no-drop-root --daemonize --debug
-
-echo "✅ Avahi iniciado, iniciando Shairport Sync..."
+# Executa o Shairport
 shairport-sync -vv -a "HomeAssistant Speaker" -o alsa -- -d hw:1,0
