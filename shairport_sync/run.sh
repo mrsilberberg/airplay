@@ -1,9 +1,7 @@
 #!/bin/bash
 
-echo "🎶 Iniciando Shairport Sync..."
+echo "🔊 Iniciando Shairport Sync com saída: ${OUTPUT}"
 
-# Exibe dispositivos de som detectados
-aplay -l
-
-# Inicia o serviço AirPlay
-exec shairport-sync -v -d
+exec shairport-sync -vv \
+  --output=alsa \
+  -- -d "${OUTPUT}"
