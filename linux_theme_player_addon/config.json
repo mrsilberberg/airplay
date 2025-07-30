@@ -1,0 +1,15 @@
+{
+  "name": "Linux Theme Player",
+  "version": "1.0",
+  "slug": "linux_theme_player",
+  "description": "Toca um tema musical clássico do Linux ao iniciar",
+  "startup": "services",
+  "boot": "auto",
+  "image": "local/linux_theme_player",
+  "host_network": true,
+  "privileged": ["SYS_RAWIO", "SYS_NICE"],
+  "devices": ["/dev/snd"],
+  "arch": ["amd64", "aarch64", "armv7"],
+  "options": {},
+  "schema": {}
+}
