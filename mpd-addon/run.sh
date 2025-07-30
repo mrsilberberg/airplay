@@ -1,6 +1,15 @@
 #!/bin/bash
 
 # Cria diretórios necessários
+# Cria diretórios e arquivos necessários
+mkdir -p /var/lib/mpd/music \
+         /var/lib/mpd/playlists \
+         /var/lib/mpd/cache \
+         /var/lib/mpd/state
+
+touch /var/lib/mpd/cache/tag_cache
+touch /var/lib/mpd/state/state
+
 mkdir -p /var/lib/mpd/music /var/lib/mpd/playlists /var/lib/mpd/cache /var/lib/mpd/state
 
 # Gera configuração MPD
