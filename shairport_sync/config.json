@@ -1,6 +1,6 @@
 {
   "name": "Shairport Sync Audio",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "slug": "shairport_sync_audio",
   "description": "Shairport Sync como add-on com suporte a áudio no HAOS",
   "startup": "services",
