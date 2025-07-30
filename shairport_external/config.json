@@ -33,5 +33,5 @@
     "media:rw",
     "data:rw"
   ],
-  "image": "mikebrady/shairport-sync"
+  "image": "mikebrady/shairport-sync:classic"
 }
