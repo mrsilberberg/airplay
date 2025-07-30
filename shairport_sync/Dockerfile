@@ -1,19 +1,13 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
+FROM alpine:3.18
 
-# Define o ambiente de idioma
-ENV LANG C.UTF-8
+SHELL ["/bin/ash", "-o", "pipefail", "-c"]
 
-# Instala dependências necessárias
-RUN apk add --no-cache \
-    shairport-sync \
-    alsa-utils \
-    dbus \
-    avahi
+# Install dependencies
+RUN apk add --no-cache     alsa-utils     avahi     dbus     shairport-sync     bash     s6-overlay
 
-# Copia o script de inicialização
-COPY run.sh /etc/s6-overlay/s6-rc.d/user/contents.d/run.sh
-RUN chmod +x /etc/s6-overlay/s6-rc.d/user/contents.d/run.sh
+# Copy run script and s6 service
+COPY run.sh /run.sh
+COPY user/ /etc/services.d/shairport/
+RUN chmod +x /run.sh /etc/services.d/shairport/run
 
-# Declara o serviço a ser iniciado
-COPY user /etc/s6-overlay/s6-rc.d/user
+CMD ["/init"]
