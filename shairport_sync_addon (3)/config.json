@@ -5,7 +5,7 @@
   "description": "AirPlay receiver for Home Assistant OS",
   "startup": "services",
   "boot": "auto",
-  "image": "mikebrady/shairport-sync",
+  "image": "mikebrady/shairport-sync:classic",
   "host_network": true,
   "privileged": ["SYS_RAWIO", "SYS_NICE"],
   "devices": ["/dev/snd"],
