@@ -1,6 +1,6 @@
 {
   "name": "Shairport External",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "slug": "shairport_external",
   "description": "Add-on to run the shairport-sync external Docker image using host network and ALSA passthrough.",
   "startup": "services",
