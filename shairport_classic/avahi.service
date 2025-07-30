@@ -1,0 +1,11 @@
+[Unit]
+Description=Avahi mDNS/DNS-SD Stack
+After=dbus.service
+Requires=dbus.service
+
+[Service]
+ExecStart=/usr/sbin/avahi-daemon --no-drop-root
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
