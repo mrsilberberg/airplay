@@ -10,7 +10,6 @@ mkdir -p /var/lib/mpd/music \
 touch /var/lib/mpd/cache/tag_cache
 touch /var/lib/mpd/state/state
 
-mkdir -p /var/lib/mpd/music /var/lib/mpd/playlists /var/lib/mpd/cache /var/lib/mpd/state
 
 # Gera configuração MPD
 cat <<EOF > /etc/mpd.conf
@@ -21,6 +20,9 @@ log_file               "/dev/stdout"
 pid_file               "/run/mpd/pid"
 state_file             "/var/lib/mpd/state/state"
 user                   "root"
+bind_to_address        "any"
+port                   "6600"
+zeroconf_enabled       "no"
 
 audio_output {
     type        "alsa"
