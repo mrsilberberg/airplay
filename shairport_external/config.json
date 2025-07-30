@@ -1,0 +1,25 @@
+{
+  "name": "Shairport External",
+  "version": "1.0.0",
+  "slug": "shairport_external",
+  "description": "AirPlay receiver using mikebrady/shairport-sync",
+  "startup": "services",
+  "boot": "auto",
+  "image": "mikebrady/shairport-sync:latest",
+  "host_network": true,
+  "privileged": [
+    "SYS_ADMIN"
+  ],
+  "devices": [
+    "/dev/snd:/dev/snd:rwm"
+  ],
+  "hassio_api": false,
+  "hassio_role": "default",
+  "homeassistant_api": false,
+  "options": {},
+  "schema": {},
+  "map": [
+    "config:rw",
+    "share:rw"
+  ]
+}
