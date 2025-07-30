@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv bash
+echo "🟢 Starting Avahi & DBus..."
+
+mkdir -p /run/dbus
+dbus-daemon --system &
+sleep 1
+exec avahi-daemon --no-drop-root --debug
