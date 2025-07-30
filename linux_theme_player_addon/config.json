@@ -1,0 +1,15 @@
+{
+  "name": "Linux Theme Player",
+  "version": "1.0",
+  "slug": "linux_theme_player",
+  "description": "Toca um tema musical .mp3 ao iniciar o add-on",
+  "startup": "services",
+  "boot": "auto",
+  "arch": ["amd64", "aarch64", "armv7"],
+  "host_network": true,
+  "init": false,
+  "options": {},
+  "schema": {},
+  "privileged": ["SYS_NICE"],
+  "devices": ["/dev/snd"]
+}
