@@ -1,0 +1,18 @@
+
+name: Shairport Sync
+version: "1.0"
+slug: shairport_sync
+description: "AirPlay receiver using Shairport Sync"
+url: "https://github.com/seuusuario/addon-shairport-sync"
+arch:
+  - amd64
+  - aarch64
+  - armv7
+startup: services
+boot: auto
+host_network: true
+audio: true
+map:
+  - config:rw
+options: {}
+schema: {}
