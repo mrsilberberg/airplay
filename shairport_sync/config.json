@@ -10,7 +10,7 @@
   "options": {},
   "hassio_api": false,
   "hassio_role": "default",
-  "homeassistant_api": false,  
+  "homeassistant_api": false,
   "schema": {},
   "init": false,
   "privileged": ["SYS_ADMIN", "DAC_READ_SEARCH"],
@@ -24,6 +24,6 @@
     "media:rw",
     "data:rw"
   ],
-  "full_access": true, 
+  "full_access": true,
   "usb": true
 }
