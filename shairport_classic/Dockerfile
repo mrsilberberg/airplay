@@ -1,23 +1,24 @@
-FROM alpine:3.19
+ARG BUILD_FROM
+FROM $BUILD_FROM
+
+# S6 overlay ativado
+ENV S6_BEHAVIOUR_IF_STAGE2_FAILS=2
+ENV S6_CMD_WAIT_FOR_SERVICES=1
+ENV S6_SERVICES_GRACETIME=5000
 
 # Instala dependências
 RUN apk add --no-cache \
     shairport-sync \
-    alsa-utils \
     avahi \
+    avahi-utils \
     dbus \
-    dbus-glib \
-    bash \
-    s6
+    alsa-utils \
+    nss-mdns
 
-# Cria usuário genérico
-RUN adduser -D -H shairport-sync
+# Cria o usuário que está faltando
+RUN addgroup -S shairport-sync && adduser -S shairport-sync -G shairport-sync
 
-# Copia scripts de inicialização
-COPY services.d/shairport/run /etc/services.d/shairport/run
-COPY services.d/avahi/run /etc/services.d/avahi/run
+# Copia configuração s6
+COPY rootfs /
 
-# Permissões
-RUN chmod +x /etc/services.d/shairport/run /etc/services.d/avahi/run
-
-ENTRYPOINT ["/init"]
+CMD [ "/init" ]
