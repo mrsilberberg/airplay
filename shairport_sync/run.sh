@@ -1,4 +1,3 @@
-#!/bin/bash
-
-echo "🎵 Iniciando Shairport Sync"
-exec shairport-sync -v -a "HomeAssistant-Audio" -o alsa -- -d hw:1,0
+#!/usr/bin/with-contenv bash
+echo "🔊 Starting Shairport Sync..."
+exec shairport-sync -vv -a "HomeAssistant Speaker" -o alsa -- -d hw:1,0
