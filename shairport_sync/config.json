@@ -1,6 +1,6 @@
 {
   "name": "Shairport Classic",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "slug": "shairport_classic",
   "description": "AirPlay (Shairport Sync) audio receiver for Home Assistant OS",
   "arch": ["amd64", "armv7", "aarch64"],
