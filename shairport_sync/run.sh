@@ -1,7 +1,4 @@
 #!/bin/bash
 
-echo "🔊 Iniciando Shairport Sync com saída: ${OUTPUT}"
-
-exec shairport-sync -vv \
-  --output=alsa \
-  -- -d "${OUTPUT}"
+echo "🎵 Iniciando Shairport Sync"
+exec shairport-sync -v -a "HomeAssistant-Audio" -o alsa -- -d hw:1,0
