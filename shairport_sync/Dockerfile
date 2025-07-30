@@ -1,8 +1,15 @@
-FROM ghcr.io/hassio-addons/base:10.2.0
+ARG BUILD_FROM
+FROM $BUILD_FROM
 
-RUN apk add --no-cache shairport-sync alsa-utils
+ENV LANG C.UTF-8
+
+RUN apk add --no-cache \
+    shairport-sync \
+    alsa-utils \
+    dbus \
+    avahi
 
 COPY run.sh /run.sh
-RUN chmod +x /run.sh
+RUN chmod a+x /run.sh
 
 CMD [ "/run.sh" ]
