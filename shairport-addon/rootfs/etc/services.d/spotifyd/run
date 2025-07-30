@@ -1,3 +1,0 @@
-#!/usr/bin/with-contenv bash
-# Inicia o Shairport Sync com o dispositivo de saída de áudio hw:1,0
-exec shairport-sync -v -a "Home Assistant" -d -- -d hw:1,0
