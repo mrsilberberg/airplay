@@ -1,28 +1,23 @@
 {
-  "name": "Airplay HA",
-  "version": "1.0",
-  "slug": "Airplay HA",
-  "description": "Música via Airplay Apply&Solve",
-  "startup": "application",
+  "name": "Shairport Sync Audio",
+  "version": "1.0.0",
+  "slug": "shairport_sync_audio",
+  "description": "Shairport Sync como add-on com suporte a áudio no HAOS",
+  "startup": "services",
   "boot": "auto",
+  "hassio_api": true,
+  "hassio_role": "default",
   "homeassistant": "2023.0.0",
   "arch": ["amd64", "armv7", "aarch64"],
-  "options": {},
-  "schema": {},
-  "init": false,
-  "privileged": [
-    "SYS_ADMIN"
-  ],
   "host_network": true,
-  "map": [
-    "config:rw",
-    "addons:rw",
-    "ssl:rw",
-    "backup:rw",
-    "share:rw",
-    "media:rw",
-    "data:rw"
-  ],
-  "full_access": true, 
-  "usb": true
+  "host_dbus": true,
+  "audio": true,
+  "privileged": ["SYS_ADMIN"],
+  "options": {
+    "output": "hw:1,0"
+  },
+  "schema": {
+    "output": "str"
+  }
 }
+
